@@ -1,0 +1,38 @@
+[
+    {
+        "id" : 1,
+        "name": "Sleeping",
+        "duration" : 8,
+        "thumbnail": ""
+    },
+    {
+        "id" : 2,
+        "name": "Eating",
+        "duration" : 1,
+        "thumbnail": ""
+    },
+    {
+        "id" : 3,
+        "name": "Coding",
+        "duration" : 4,
+        "thumbnail": ""
+    },
+    {
+        "id" : 4,
+        "name": "Being Superman",
+        "duration" : 2,
+        "thumbnail": ""
+    },
+    {
+        "id" : 5,
+        "name": "Loving Lois",
+        "duration" : 24,
+        "thumbnail": ""
+    },
+    {
+        "id" : 6,
+        "name": "Learning React",
+        "duration" : 6,
+        "thumbnail": ""
+    }    
+]
