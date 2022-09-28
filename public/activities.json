@@ -3,36 +3,36 @@
         "id" : 1,
         "name": "Sleeping",
         "duration" : 8,
-        "thumbnail": ""
+        "thumbnail": "/images/sleeping.png"
     },
     {
         "id" : 2,
         "name": "Eating",
         "duration" : 1,
-        "thumbnail": ""
+        "thumbnail": "/images/eating.png"
     },
     {
         "id" : 3,
         "name": "Coding",
         "duration" : 4,
-        "thumbnail": ""
+        "thumbnail": "/images/coding.png"
     },
     {
         "id" : 4,
         "name": "Being Superman",
         "duration" : 2,
-        "thumbnail": ""
+        "thumbnail": "/images/superman.png"
     },
     {
         "id" : 5,
-        "name": "Loving Lois",
+        "name": "Date with Lois",
         "duration" : 24,
-        "thumbnail": ""
+        "thumbnail": "/images/date.png"
     },
     {
         "id" : 6,
-        "name": "Learning React",
+        "name": "Understanding Batman",
         "duration" : 6,
-        "thumbnail": ""
+        "thumbnail": "/images/batman.png"
     }    
 ]
