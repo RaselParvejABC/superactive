@@ -7,7 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import "./QuestionsAndAnswers.css";
 
-const QAndAs = () => {
+const QuestionsAndAnswers = () => {
   const [questionsAnswers, setQuestionsAnswers] = React.useState([]);
   React.useEffect(() => {
     fetch("ques-and-ans.json")
@@ -26,7 +26,7 @@ const QAndAs = () => {
             aria-controls={`panel${index}a-content`}
             id={`panel${index}a-header`}
           >
-            <Typography class="ques-ans">
+            <Typography className="ques-ans" color="primary">
               {questionAnswer["question"]}
             </Typography>
           </AccordionSummary>
@@ -44,4 +44,4 @@ const QAndAs = () => {
   );
 };
 
-export default QAndAs;
+export default QuestionsAndAnswers;
