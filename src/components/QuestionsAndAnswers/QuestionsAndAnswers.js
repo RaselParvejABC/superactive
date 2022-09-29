@@ -23,8 +23,8 @@ const QAndAs = () => {
         <Accordion key={index}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
+            aria-controls={`panel${index}a-content`}
+            id={`panel${index}a-header`}
           >
             <Typography>{questionAnswer["question"]}</Typography>
           </AccordionSummary>
