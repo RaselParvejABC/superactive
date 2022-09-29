@@ -1,7 +1,5 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -33,38 +31,33 @@ const Activity = ({
             {`Duration: ${activity.duration} Hours`}
           </Typography>
 
-          {selectedIDs[activity.id] && (
+          {selectedIDs[activity.id] ? (
             <Typography gutterBottom variant="body" component="div">
               {`${selectedIDs[activity.id]} Times in Basket`}
             </Typography>
+          ) : (
+            <Typography gutterBottom variant="body" component="div">
+              {`Not in Basket`}
+            </Typography>
           )}
         </CardContent>
-        <CardActions>
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            spacing={2}
+        <CardActions sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => addToSelection(activity.id)}
+            size="md"
           >
-            <Box>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={() => addToSelection(activity.id)}
-              >
-                <AddCircleIcon />
-              </Button>
-            </Box>
-            <Box>
-              <Button
-                variant="contained"
-                color="warning"
-                onClick={() => removeFromSelection(activity.id)}
-              >
-                <RemoveCircleIcon />
-              </Button>
-            </Box>
-          </Stack>
+            <AddCircleIcon />
+          </Button>
+
+          <Button
+            variant="contained"
+            color="warning"
+            onClick={() => removeFromSelection(activity.id)}
+          >
+            <RemoveCircleIcon />
+          </Button>
         </CardActions>
       </Card>
     </Grid>

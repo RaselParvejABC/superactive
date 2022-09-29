@@ -28,7 +28,6 @@ const App = () => {
   };
 
   const addToSelection = (id) => {
-    console.log(selectedIDs);
     const selection = { ...selectedIDs };
     if (!selection[id]) {
       selection[id] = 0;
