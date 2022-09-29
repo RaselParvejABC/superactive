@@ -17,11 +17,16 @@ const ActivityBasket = ({ activities, selectedIDs }) => {
   };
 
   const calculateActivityDuration = () => {
-    let totalHours = 0;
+    console.log("activities", activities);
+    const selectedIDsArray = Object.keys(selectedIDs).map((id) => Number(id));
 
-    console.log(Object.keys(selectedIDs));
-
-    return totalHours;
+    return selectedIDsArray.reduce((previous, id) => {
+      const activity = activities[id - 1];
+      if (activity && activity.duration) {
+        return previous + Number(activity.duration) * selectedIDs[id];
+      }
+      return previous;
+    }, 0);
   };
 
   React.useEffect(() => {
@@ -29,7 +34,7 @@ const ActivityBasket = ({ activities, selectedIDs }) => {
   }, []);
 
   return (
-    <Paper sx={{ p: 3 }}>
+    <Paper sx={{ p: 3, position: { md: "fixed" } }}>
       <Person
         image="/images/me.jpg"
         name="Rasel Parvej"
