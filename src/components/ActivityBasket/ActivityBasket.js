@@ -1,11 +1,13 @@
 import React from "react";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import Person from "../Person/Person";
 import BreakDurationChooser from "../BreakDurationChooser/BreakDurationChooser";
 import TotalDuration from "../TotalDuration/TotalDuration";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import {
   getBreakDurationFromStorage,
   setBreakDurationToStorage,
@@ -77,9 +79,14 @@ const ActivityBasket = ({ activities, selectedIDs, onActivitiesCompleted }) => {
         autoHideDuration={5000}
         onClose={() => setToastOpen(false)}
       >
-        <Alert severity="success" sx={{ width: "100%" }}>
-          Well Done! Activity Basket Emptied!
-        </Alert>
+        <div>
+          <Typography align="center">
+            <ThumbUpIcon color="info" sx={{ fontSize: "50px" }} />
+          </Typography>
+          <Alert severity="success" sx={{ width: "100%" }}>
+            Well Done! Activity Basket Emptied!
+          </Alert>
+        </div>
       </Snackbar>
     </Paper>
   );
