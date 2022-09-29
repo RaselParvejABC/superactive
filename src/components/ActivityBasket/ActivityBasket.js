@@ -1,6 +1,8 @@
 import React from "react";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 import Person from "../Person/Person";
 import BreakDurationChooser from "../BreakDurationChooser/BreakDurationChooser";
 import TotalDuration from "../TotalDuration/TotalDuration";
@@ -11,6 +13,7 @@ import {
 
 const ActivityBasket = ({ activities, selectedIDs, onActivitiesCompleted }) => {
   const [breakDuration, setBreakDuration] = React.useState(0);
+  const [toastOpen, setToastOpen] = React.useState(false);
 
   const onNewDurationChoose = (newDuration) => {
     setBreakDurationToStorage(newDuration);
@@ -59,10 +62,24 @@ const ActivityBasket = ({ activities, selectedIDs, onActivitiesCompleted }) => {
         color="success"
         variant="contained"
         sx={{ mt: 3 }}
-        onClick={onActivitiesCompleted}
+        onClick={() => {
+          setBreakDuration(0);
+          setToastOpen(true);
+          onActivitiesCompleted();
+        }}
       >
         Activities Completed
       </Button>
+
+      <Snackbar
+        anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+        open={toastOpen}
+        autoHideDuration={5000}
+      >
+        <Alert severity="success" sx={{ width: "100%" }}>
+          Well Done! Activity Basket Emptied!
+        </Alert>
+      </Snackbar>
     </Paper>
   );
 };
