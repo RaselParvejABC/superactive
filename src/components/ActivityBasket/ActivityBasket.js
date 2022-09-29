@@ -9,8 +9,11 @@ const ActivityBasket = ({ activities, selectedIDs }) => {
         image="/images/me.jpg"
         name="Muhammad Rasel Parvej"
         location="Cumilla, Bangladesh"
+        height="5'8''"
+        weight="500"
+        age="1000"
       ></Person>
-      
+
     </Paper>
   );
 };
