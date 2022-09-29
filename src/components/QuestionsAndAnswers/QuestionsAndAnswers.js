@@ -15,7 +15,7 @@ const QAndAs = () => {
       .then((data) => setQuestionsAnswers(data));
   }, []);
   return (
-    <div className="questions-and-answers">
+    <div className>
       <Typography align="center" variant="h3" color="primary" sx={{ mt: 5 }}>
         Questions and Answers
       </Typography>
@@ -26,10 +26,12 @@ const QAndAs = () => {
             aria-controls={`panel${index}a-content`}
             id={`panel${index}a-header`}
           >
-            <Typography>{questionAnswer["question"]}</Typography>
+            <Typography class="ques-ans">
+              {questionAnswer["question"]}
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>{questionAnswer["answer"]}</Typography>
+            <Typography class="ques-ans">{questionAnswer["answer"]}</Typography>
           </AccordionDetails>
         </Accordion>
       ))}
