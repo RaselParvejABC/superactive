@@ -15,7 +15,7 @@ const QuestionsAndAnswers = () => {
       .then((data) => setQuestionsAnswers(data));
   }, []);
   return (
-    <div className>
+    <div>
       <Typography align="center" variant="h3" color="primary" sx={{ mt: 5 }}>
         Questions and Answers
       </Typography>
@@ -31,12 +31,11 @@ const QuestionsAndAnswers = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            {questionAnswer["answer"].map((paragraph) => (
-              <Typography className="ques-ans" paragraph>
+            {questionAnswer["answer"].map((paragraph, index) => (
+              <Typography key={index} className="ques-ans" paragraph>
                 {paragraph}
               </Typography>
             ))}
-            {/* <Typography class="ques-ans">{questionAnswer["answer"]}</Typography> */}
           </AccordionDetails>
         </Accordion>
       ))}
