@@ -21,8 +21,8 @@ const setSelection = (selectedIDs) => {
 };
 
 export {
-  setBreakDuration,
-  getBreakDuration,
+  setBreakDuration as setBreakDurationToStorage,
+  getBreakDuration as getBreakDurationFromStorage,
   getSelection as getSelectionFromStorage,
   setSelection as setSelectionToStorage,
 };
