@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap");
 
-.ques-ans {
+.ques-ans,
+p.ques-ans {
   font-family: "Hind Siliguri", sans-serif;
 }
