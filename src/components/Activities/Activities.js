@@ -13,7 +13,7 @@ const Activities = ({
   return (
     <>
       <Typography
-        variant="h4"
+        variant="h5"
         color="primary"
         sx={{ fontWeight: "fontWeightBold" }}
       >

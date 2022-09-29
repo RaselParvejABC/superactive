@@ -12,10 +12,13 @@ const App = () => {
   const [selectedIDs, setSelectedIDs] = React.useState({});
 
   const removeFromSelection = (id) => {
+    console.log(selectedIDs);
     const selection = { ...selectedIDs };
-    if (selection[id]) {
-      selection[id] = selection[id] - 1;
+    if (!selection[id]) {
+      return;
     }
+
+    selection[id] = selection[id] - 1;
 
     if (selection[id] === 0) {
       delete selection[id];
@@ -25,11 +28,12 @@ const App = () => {
   };
 
   const addToSelection = (id) => {
+    console.log(selectedIDs);
     const selection = { ...selectedIDs };
-    if (!selectedIDs[id]) {
-      selectedIDs[id] = 0;
+    if (!selection[id]) {
+      selection[id] = 0;
     }
-    selectedIDs[id] = selectedIDs[id] + 1;
+    selection[id] = selection[id] + 1;
     setSelectionToStorage(selection);
     setSelectedIDs(selection);
   };
@@ -45,7 +49,7 @@ const App = () => {
 
   React.useEffect(() => {
     setSelectedIDs(getSelectionFromStorage());
-  }, []);
+  }, [activities]);
 
   return (
     <Grid container spacing={2} p={5}>
