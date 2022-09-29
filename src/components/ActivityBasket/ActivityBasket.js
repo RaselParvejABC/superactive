@@ -39,7 +39,7 @@ const ActivityBasket = ({ activities, selectedIDs, onActivitiesCompleted }) => {
   }, []);
 
   return (
-    <Paper sx={{ p: 3, position: { md: "fixed" } }}>
+    <Paper sx={{ p: 3, position: { lg: "fixed" } }}>
       <Person
         image="/images/me.jpg"
         name="Rasel Parvej"
