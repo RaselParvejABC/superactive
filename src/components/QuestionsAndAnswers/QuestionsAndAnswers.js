@@ -31,7 +31,12 @@ const QAndAs = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography class="ques-ans">{questionAnswer["answer"]}</Typography>
+            {questionAnswer["answer"].map((paragraph) => (
+              <Typography className="ques-ans" paragraph>
+                {paragraph}
+              </Typography>
+            ))}
+            {/* <Typography class="ques-ans">{questionAnswer["answer"]}</Typography> */}
           </AccordionDetails>
         </Accordion>
       ))}
