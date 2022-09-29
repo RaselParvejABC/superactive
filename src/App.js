@@ -2,6 +2,7 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Activities from "./components/Activities/Activities";
 import ActivityBasket from "./components/ActivityBasket/ActivityBasket";
+import QuestionsAndAnswers from "./components/QuestionsAndAnswers/QuestionsAndAnswers";
 import {
   getSelectionFromStorage,
   setSelectionToStorage,
@@ -71,6 +72,9 @@ const App = () => {
           selectedIDs={selectedIDs}
           onActivitiesCompleted={onActivitiesCompleted}
         ></ActivityBasket>
+      </Grid>
+      <Grid item xs={12} md={8} lg={9}>
+        <QuestionsAndAnswers></QuestionsAndAnswers>
       </Grid>
     </Grid>
   );
