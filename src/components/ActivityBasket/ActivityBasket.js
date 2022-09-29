@@ -75,6 +75,7 @@ const ActivityBasket = ({ activities, selectedIDs, onActivitiesCompleted }) => {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         open={toastOpen}
         autoHideDuration={5000}
+        onClose={() => setToastOpen(false)}
       >
         <Alert severity="success" sx={{ width: "100%" }}>
           Well Done! Activity Basket Emptied!
