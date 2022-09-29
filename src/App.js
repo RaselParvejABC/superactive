@@ -37,6 +37,11 @@ const App = () => {
     setSelectedIDs(selection);
   };
 
+  const onActivitiesCompleted = () => {
+    localStorage.clear();
+    setSelectedIDs({});
+  };
+
   React.useEffect(() => {
     const fetchActivities = async () => {
       const response = await fetch("activities.json");
@@ -64,6 +69,7 @@ const App = () => {
         <ActivityBasket
           activities={activities}
           selectedIDs={selectedIDs}
+          onActivitiesCompleted={onActivitiesCompleted}
         ></ActivityBasket>
       </Grid>
     </Grid>

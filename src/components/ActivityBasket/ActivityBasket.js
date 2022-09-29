@@ -1,5 +1,6 @@
 import React from "react";
 import Paper from "@mui/material/Paper";
+import Button from "@mui/material/Button";
 import Person from "../Person/Person";
 import BreakDurationChooser from "../BreakDurationChooser/BreakDurationChooser";
 import TotalDuration from "../TotalDuration/TotalDuration";
@@ -8,7 +9,7 @@ import {
   setBreakDurationToStorage,
 } from "../../business-logic/LocalStorage";
 
-const ActivityBasket = ({ activities, selectedIDs }) => {
+const ActivityBasket = ({ activities, selectedIDs, onActivitiesCompleted }) => {
   const [breakDuration, setBreakDuration] = React.useState(0);
 
   const onNewDurationChoose = (newDuration) => {
@@ -17,7 +18,6 @@ const ActivityBasket = ({ activities, selectedIDs }) => {
   };
 
   const calculateActivityDuration = () => {
-    console.log("activities", activities);
     const selectedIDsArray = Object.keys(selectedIDs).map((id) => Number(id));
 
     return selectedIDsArray.reduce((previous, id) => {
@@ -53,6 +53,16 @@ const ActivityBasket = ({ activities, selectedIDs }) => {
         activityDuration={calculateActivityDuration()}
         breakDuration={breakDuration}
       ></TotalDuration>
+
+      <Button
+        fullWidth
+        color="success"
+        variant="contained"
+        sx={{ mt: 3 }}
+        onClick={onActivitiesCompleted}
+      >
+        Activities Completed
+      </Button>
     </Paper>
   );
 };
