@@ -13,7 +13,6 @@ const App = () => {
   const [selectedIDs, setSelectedIDs] = React.useState({});
 
   const removeFromSelection = (id) => {
-    console.log(selectedIDs);
     const selection = { ...selectedIDs };
     if (!selection[id]) {
       return;

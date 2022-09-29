@@ -37,7 +37,7 @@ const Person = ({ image, name, location, height, weight, age }) => {
           color="primary"
           variant="subtitle1"
           sx={boldStyle}
-        >{`Age: ${weight} KG`}</Typography>
+        >{`Weight: ${weight} KG`}</Typography>
       </Grid>
     </Grid>
   );

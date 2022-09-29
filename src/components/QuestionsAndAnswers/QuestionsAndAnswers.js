@@ -16,7 +16,12 @@ const QuestionsAndAnswers = () => {
   }, []);
   return (
     <div>
-      <Typography align="center" variant="h3" color="primary" sx={{ mt: 5 }}>
+      <Typography
+        align="center"
+        variant="h3"
+        color="primary"
+        sx={{ mt: 5, mb: 5 }}
+      >
         Questions and Answers
       </Typography>
       {questionsAnswers.map((questionAnswer, index) => (
