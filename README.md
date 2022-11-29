@@ -1,1 +1,4 @@
-#Milestone-8 Assignment Project
+# Basic React Project
+
+- react
+- react-dom
